@@ -1,0 +1,10 @@
+class Solution:
+    def getConcatenation(self, nums: List[int]) -> List[int]:
+        ans = [0 for i in range(len(nums) * 2)]
+        
+        for i in range(len(nums)):
+            ans[i], ans[i + len(nums)] = nums[i], nums[i]
+        
+        print(ans)
+
+        return ans
