@@ -1,0 +1,19 @@
+class Solution:
+    cache = {}
+    def climbStairs(self, n: int) -> int:
+        if n == 0 or n == 1:
+            return 1
+
+        n_1, n_2 = (n - 1), (n - 2)
+
+        if n_1 in self.cache.keys():
+            pass
+        else:
+            self.cache[n_1] = self.climbStairs(n_1)
+
+        if n_2 in self.cache.keys():
+            pass
+        else:
+            self.cache[n_2] = self.climbStairs(n_2)
+
+        return self.cache[n_1] + self.cache[n_2]
